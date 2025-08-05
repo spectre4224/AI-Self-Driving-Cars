@@ -1,0 +1,128 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: hsl(0, 0%, 100%);
+  --foreground: hsl(215, 25%, 6%);
+  --muted: hsl(210, 11%, 96%);
+  --muted-foreground: hsl(215, 13%, 45%);
+  --popover: hsl(0, 0%, 100%);
+  --popover-foreground: hsl(215, 25%, 6%);
+  --card: hsl(0, 0%, 100%);
+  --card-foreground: hsl(215, 25%, 6%);
+  --border: hsl(215, 13%, 90%);
+  --input: hsl(215, 13%, 90%);
+  --primary: hsl(217, 91%, 60%);
+  --primary-foreground: hsl(211, 100%, 99%);
+  --secondary: hsl(210, 11%, 96%);
+  --secondary-foreground: hsl(214, 32%, 9%);
+  --accent: hsl(210, 11%, 96%);
+  --accent-foreground: hsl(214, 32%, 9%);
+  --destructive: hsl(0, 84%, 60%);
+  --destructive-foreground: hsl(60, 9%, 98%);
+  --ring: hsl(215, 25%, 6%);
+  --radius: 0.75rem;
+  --ai-blue: hsl(217, 91%, 60%);
+  --ai-green: hsl(158, 64%, 52%);
+  --ai-amber: hsl(43, 96%, 56%);
+  --ai-red: hsl(0, 84%, 60%);
+  --ai-purple: hsl(252, 83%, 67%);
+}
+
+.dark {
+  --background: hsl(224, 71%, 4%);
+  --foreground: hsl(213, 31%, 91%);
+  --muted: hsl(223, 47%, 11%);
+  --muted-foreground: hsl(215, 14%, 65%);
+  --popover: hsl(224, 71%, 4%);
+  --popover-foreground: hsl(213, 31%, 91%);
+  --card: hsl(224, 71%, 4%);
+  --card-foreground: hsl(213, 31%, 91%);
+  --border: hsl(216, 34%, 17%);
+  --input: hsl(216, 34%, 17%);
+  --primary: hsl(217, 91%, 60%);
+  --primary-foreground: hsl(211, 100%, 99%);
+  --secondary: hsl(223, 47%, 11%);
+  --secondary-foreground: hsl(213, 31%, 91%);
+  --accent: hsl(223, 47%, 11%);
+  --accent-foreground: hsl(213, 31%, 91%);
+  --destructive: hsl(0, 63%, 31%);
+  --destructive-foreground: hsl(213, 31%, 91%);
+  --ring: hsl(216, 34%, 17%);
+  --ai-blue: hsl(217, 91%, 60%);
+  --ai-green: hsl(158, 64%, 52%);
+  --ai-amber: hsl(43, 96%, 56%);
+  --ai-red: hsl(0, 84%, 60%);
+  --ai-purple: hsl(252, 83%, 67%);
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply font-sans antialiased bg-background text-foreground;
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+}
+
+@layer utilities {
+  .ai-blue {
+    color: hsl(var(--ai-blue));
+  }
+  .bg-ai-blue {
+    background-color: hsl(var(--ai-blue));
+  }
+  .ai-green {
+    color: hsl(var(--ai-green));
+  }
+  .bg-ai-green {
+    background-color: hsl(var(--ai-green));
+  }
+  .ai-amber {
+    color: hsl(var(--ai-amber));
+  }
+  .bg-ai-amber {
+    background-color: hsl(var(--ai-amber));
+  }
+  .ai-red {
+    color: hsl(var(--ai-red));
+  }
+  .bg-ai-red {
+    background-color: hsl(var(--ai-red));
+  }
+  .ai-purple {
+    color: hsl(var(--ai-purple));
+  }
+  .bg-ai-purple {
+    background-color: hsl(var(--ai-purple));
+  }
+}
+
+.slider::-webkit-slider-thumb {
+  appearance: none;
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  background: hsl(var(--ai-blue));
+  cursor: pointer;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.slider::-moz-range-thumb {
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  background: hsl(var(--ai-blue));
+  cursor: pointer;
+  border: none;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+canvas {
+  image-rendering: pixelated;
+  image-rendering: -moz-crisp-edges;
+  image-rendering: crisp-edges;
+}
